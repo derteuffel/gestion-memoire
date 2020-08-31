@@ -1,0 +1,103 @@
+<div class="container container-fluid">
+  <div class="alert alert-info text-center my-3">
+    <h3>Page d'ajout d'un nouveau Memoire</h3>
+  </div>
+  <div class="ui-button">
+    <a href="/memoire-list" class="btn btn-primary">Voir tout les memoires</a>
+  </div>
+  <div class="card my-3">
+    <div class="card-header">
+      <div class="card-title text-center">
+        <h2>Formulaire d'un memoire</h2>
+      </div>
+    </div>
+    <div class="card-body justify-content-center d-flex">
+      <form [formGroup]="addMemoireForm" class="form" (ngSubmit)="addMemoire()">
+        <div class="form-group">
+          <label class="post-title">Theme</label>
+          <input type="text" [formControlName]="'titre'" class="form-control" placeholder="Theme">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Nom de l'etudiant</label>
+          <input type="text" [formControlName]="'nomEtudiant'" class="form-control" placeholder="Etudiant">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Matricule de l'etudiant</label>
+          <input type="text" [formControlName]="'matriculeEtudiant'" class="form-control" placeholder="Matricule de l'etudiant">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Code de la filiere</label>
+          <select type="text" [formControlName]="'codeFiliere'" class="form-control" >
+            <option value="AGEPD">AGEPD</option>
+            <option value="ENREN">ENREN</option>
+            <option value="HYMAE">HYMAE</option>
+            <option value="INFOTEL">INFOTEL</option>
+            <option value="GCA">GCA</option>
+            <option value="GTC">GTC</option>
+            <option value="SCIENVI">SCIENVI</option>
+            <option value="CLIMATO">CLIMATO</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="post-title">Intitule de la filiere</label>
+          <select type="text" [formControlName]="'intituleFiliere'" class="form-control" >
+            <option value="AGRICULTURE, ELEVAGE ET PRODUITS DERRIVES">AGRICULTURE, ELEVAGE ET PRODUITS DERRIVES</option>
+            <option value="ENERGIE RENOUVELABLE">ENERGIE RENOUVELABLE</option>
+            <option value="HYDROLIQUE ET MAITRISE DES EAUX">HYDROLIQUE ET MAITRISE DES EAUX</option>
+            <option value="INFORMATIQUE ET TELECOMMUNICATIONS">INFORMATIQUE ET TELECOMMUNICATIONS</option>
+            <option value="GENIE CIVIL ET ARCHITECTURE">GENIE CIVIL ET ARCHITECTURE</option>
+            <option value="GENIE TEXTILE ET CUIRE">GENIE TEXTILE ET CUIRE</option>
+            <option value="SCIENCES ENVIRONNEMENTALE">SCIENCES ENVIRONNEMENTALE</option>
+            <option value="CLIMATOLOGIE">CLIMATOLOGIE</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="post-title">Option</label>
+          <input type="text" [formControlName]="'options'" class="form-control" placeholder="Option">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Niveau</label>
+          <select type="text" [formControlName]="'titreDiplome'" class="form-control" >
+            <option value="INGENIEUR DES TRAVAUX">INGENIEUR DES TRAVAUX</option>
+            <option value="INGENIEUR DE CONCEPTION">INGENIEUR DE CONCEPTION</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="post-content">Resume</label>
+<!--          <editor [formControlName]="'resume'" [init]="{plugins: 'link'}"></editor>-->
+          <textarea [formControlName]="'resume'" class="form-control" rows="4" placeholder="Resume"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="post-content">Abstract Memoire</label>
+          <textarea [formControlName]="'abstractMemoire'" class="form-control" rows="4" placeholder="Abstract"></textarea>
+          <!--<editor [formControlName]="'abstractMemoire'" [init]="{plugins: 'link'}"></editor>-->
+        </div>
+        <div class="form-group">
+          <label class="post-title">Nom de l'encadreur</label>
+          <input type="text" [formControlName]="'nomEncadreur'" class="form-control" placeholder="Encadreur">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Titre de l'encadreur</label>
+          <input type="text" [formControlName]="'titreEncadreur'" class="form-control" placeholder="Titre Encadreur">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Grade de l'encadreur</label>
+          <input type="text" [formControlName]="'gradeEncadreur'" class="form-control" placeholder="Grade de l'encadreur">
+        </div>
+        <div class="form-group">
+          <label class="post-content">Mots cle( Separer les mots cle par des virgules)</label>
+<!--          <editor [formControlName]="'motCles'" [init]="{plugins: 'link'}"></editor>-->
+          <textarea [formControlName]="'motCles'" class="form-control" rows="4" placeholder="Mots cles"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="post-title">Session</label>
+          <input type="text" [formControlName]="'session'" class="form-control" placeholder="Session">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </form >
+    </div>
+
+  </div>
+</div>

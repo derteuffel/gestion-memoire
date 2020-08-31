@@ -1,0 +1,102 @@
+<div class="container container-fluid">
+  <div class="alert alert-info text-center my-3">
+    <h3>Page de modificaion d'un  Memoire</h3>
+  </div>
+  <div class="ui-button">
+    <a href="/memoire-list" class="btn btn-primary"><i class="fa fa-long-arrow-left"></i>&nbsp;Voir tout les memoires</a>
+  </div>
+  <div class="card my-3">
+    <div class="card-header">
+      <div class="card-title text-center">
+        <h2>Formulaire d'un memoire</h2>
+      </div>
+    </div>
+    <div class="card-body justify-content-center d-flex">
+      <form  class="form"  (ngSubmit)="updateMemoire()">
+        <div class="form-group">
+          <label class="post-title">Theme</label>
+          <input type="text" [(ngModel)]="memoireDetail.titre" name="titre" class="form-control" placeholder="Theme">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Nom de l'etudiant</label>
+          <input type="text" [(ngModel)]="memoireDetail.nomEtudiant" name="nomEtudiant" class="form-control" placeholder="Etudiant">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Matricule de l'etudiant</label>
+          <input type="text" [ngModel]="updateMemoirePayload.matriculeEtudiant"  class="form-control" placeholder="Matricule de l'etudiant">
+        </div>
+
+        <div class="form-group">
+          <label class="post-title">Code de la filiere</label>
+            <select type="text" [(ngModel)]="memoireDetail.titreFiliere" name="titreFiliere" class="form-control" >
+            <option value="AGEPD">AGEPD</option>
+            <option value="ENREN">ENREN</option>
+            <option value="HYMAE">HYMAE</option>
+            <option value="INFOTEL">INFOTEL</option>
+            <option value="GCA">GCA</option>
+            <option value="GTC">GTC</option>
+            <option value="SCIENVI">SCIENVI</option>
+            <option value="CLIMATO">CLIMATO</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="post-title">Intitule de la filiere</label>
+          <select type="text" [(ngModel)]="updateMemoirePayload.intituleFiliere"  class="form-control" >
+            <option value="AGRICULTURE, ELEVAGE ET PRODUITS DERRIVES">AGRICULTURE, ELEVAGE ET PRODUITS DERRIVES</option>
+            <option value="ENERGIE RENOUVELABLE">ENERGIE RENOUVELABLE</option>
+            <option value="HYDROLIQUE ET MAITRISE DES EAUX">HYDROLIQUE ET MAITRISE DES EAUX</option>
+            <option value="INFORMATIQUE ET TELECOMMUNICATIONS">INFORMATIQUE ET TELECOMMUNICATIONS</option>
+            <option value="GENIE CIVIL ET ARCHITECTURE">GENIE CIVIL ET ARCHITECTURE</option>
+            <option value="GENIE TEXTILE ET CUIRE">GENIE TEXTILE ET CUIRE</option>
+            <option value="SCIENCES ENVIRONNEMENTALE">SCIENCES ENVIRONNEMENTALE</option>
+            <option value="CLIMATOLOGIE">CLIMATOLOGIE</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="post-title">Option</label>
+          <input type="text" [(ngModel)]="memoireDetail.options" name="options" class="form-control" placeholder="Option">
+        </div>
+        <div class="form-group">
+          <label class="post-title">Niveau</label>
+          <select type="text" [(ngModel)]="memoireDetail.titreDiplome" name="titreDiplome" class="form-control" >
+            <option value="INGENIEUR DES TRAVAUX">INGENIEUR DES TRAVAUX</option>
+            <option value="INGENIEUR DE CONCEPTION">INGENIEUR DE CONCEPTION</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="post-content">Resume</label>
+                    <!--<editor [(ngModel)]="memoireDetail.resume" name="resume" [init]="{plugins: 'link'}"></editor>-->
+          <textarea [(ngModel)]="memoireDetail.resume" name="resume" class="form-control" rows="4" placeholder="Resume"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="post-content">Abstract Memoire</label>
+          <textarea [(ngModel)]="memoireDetail.abstractMemoire" name="abstractMemoire" class="form-control" rows="4" placeholder="Abstract"></textarea>
+          <!--<editor [(ngModel)]="memoireDetail.abstractMemoire" name="abstractMemoire" [init]="{plugins: 'link'}"></editor>-->
+        </div>
+        <div class="form-group">
+          <label class="post-title">Nom de l'encadreur</label>
+          <input type="text" [(ngModel)]="memoireDetail.nomEncadreur" name="nomEncadreur" class="form-control" placeholder="Encadreur">
+        </div>
+
+        <div class="form-group">
+          <label class="post-content">Mots cle( Separer les mots cle par des virgules)</label>
+          <span>
+            <ul *ngFor="let item of memoireDetail.motCles">
+                <li>{{item}}</li>
+              </ul>
+            </span>
+                    <!--<editor [(ngModel)]="memoireDetail.motCles" name="motCles" [init]="{plugins: 'link'}"></editor>-->
+          <textarea [(ngModel)]="updateMemoirePayload.motCles" name="motCles" class="form-control" rows="4" placeholder="Mots cles"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="post-title">Session</label>
+          <input type="text" [(ngModel)]="memoireDetail.session" name="session" class="form-control" placeholder="Session">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </form >
+    </div>
+
+  </div>
+</div>

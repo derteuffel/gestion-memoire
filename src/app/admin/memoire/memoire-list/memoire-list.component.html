@@ -1,0 +1,37 @@
+<div class="container container-fluid">
+  <div class="alert alert-info text-center my-3">
+    <h3>Page de consultation des Memoires</h3>
+  </div>
+  <div class="ui-button">
+    <a href="/memoire-add" class="btn btn-primary">Nouveau Memoire&nbsp;&nbsp;<i class="fa fa-plus"></i></a>
+  </div>
+  <div class="my-3">
+    <table class="table table-responsive-lg table-bordered table-hover">
+      <thead class="badge-info">
+        <th>Theme</th>
+        <th>Code Filiere</th>
+        <th>Option</th>
+        <th>Session</th>
+        <th>Niveau</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of lists | async | paginate: { itemsPerPage: 7, currentPage: page }">
+          <td>{{item.titre}}</td>
+          <td>{{item.titreFiliere}}</td>
+          <td>{{item.options}}</td>
+          <td>{{item.session}}</td>
+          <td>{{item.titreDiplome}}</td>
+          <td><a href="/memoire-details/{{item.id}}">Detail&nbsp;<i class="fa fa-eye"></i></a>
+          <a href="/memoire-update/{{item.id}}">Editer&nbsp;<i class="fa fa-pencil"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls class="myPagination"
+                         (pageChange)="handlePageChange($event)"
+                         previousLabel="Prec"
+                         nextLabel="Suiv"
+                         maxSize="4"
+    ></pagination-controls>
+  </div>
+</div>
