@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {MemoireService} from '../memoire.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MemoirePayload} from './memoire-payload';
+import {FileUploader} from 'ng2-file-upload';
 
 @Component({
   selector: 'app-memoire-add',
@@ -10,6 +11,9 @@ import {MemoirePayload} from './memoire-payload';
   styleUrls: ['./memoire-add.component.css']
 })
 export class MemoireAddComponent implements OnInit {
+
+  @ViewChild('fileInput') fileInput: ElementRef;
+
 
   addMemoireForm: FormGroup;
   memoirePayload: MemoirePayload;
@@ -64,6 +68,7 @@ export class MemoireAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
   addMemoire(){
     this.memoirePayload.abstractMemoire = this.addMemoireForm.get('abstractMemoire').value;
@@ -82,7 +87,7 @@ export class MemoireAddComponent implements OnInit {
     this.memoirePayload.titreDiplome = this.addMemoireForm.get('titreDiplome').value;
     this.memoiresService.addMemoire(this.memoirePayload).subscribe(data => {
       console.log(data);
-      this.router.navigateByUrl('/memoire-list');
+      this.router.navigateByUrl('/memoire-upload/' + this.memoirePayload.titre);
     }, error => {console.log('Aucune reponse' + error);
     })
   }

@@ -7,7 +7,7 @@
       <a href="/memoire-list" class="btn btn-primary"><i class="fa fa-long-arrow-left"></i>&nbsp;Retour vers la liste des memoires</a>
     </div>
     <div class="col-md-8 justify-content-center d-flex">
-      <button class="btn btn-secondary mx-2">Telecharger le memoire&nbsp;&nbsp; <i class="fa fa-download"></i> </button>
+      <a class="btn btn-secondary mx-2" href="/memoire-download/{{memoire.titre}}">Telecharger le memoire&nbsp;&nbsp; <i class="fa fa-download"></i> </a>
       <a href="/memoire-update/{{memoire.id}}" class="btn btn-warning mx-2"><i class="fa fa-pencil"></i>&nbsp;Modifier Memoire</a>
       <button (click)="delete(memoire.id)"  class="btn btn-danger mx-2"><i class="fa fa-trash"></i>&nbsp;Supprimer Memoire</button>
     </div>

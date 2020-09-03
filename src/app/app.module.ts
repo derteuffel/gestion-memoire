@@ -22,8 +22,9 @@ import { MemoireUpdateComponent } from './admin/memoire/memoire-update/memoire-u
 import { HomeComponent } from './guest/home/home.component';
 import {HeaderComponent} from './admin/header/header.component';
 import {AuthGuard} from './auth.guard';
-import {MemoireDetailsComponent} from './guest/memoire-details/memoire-details.component';
 import { GuestMemoireDetailsComponent } from './guest/guest-memoire-details/guest-memoire-details.component';
+import { MemoireUploadComponent } from './admin/memoire/memoire-upload/memoire-upload.component';
+import { MemoireDownloadComponent } from './admin/memoire/memoire-download/memoire-download.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { GuestMemoireDetailsComponent } from './guest/guest-memoire-details/gues
     MemoireUpdateComponent,
     HomeComponent,
     GuestMemoireDetailsComponent,
+    MemoireUploadComponent,
+    MemoireDownloadComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,8 @@ import { GuestMemoireDetailsComponent } from './guest/guest-memoire-details/gues
       {path: 'memoire-details/:id', component: MemoireDetailsComponent, canActivate: [AuthGuard]},
       {path: 'memoire-add', component: MemoireAddComponent, canActivate: [AuthGuard]},
       {path: 'memoire-update/:id', component: MemoireUpdateComponent, canActivate: [AuthGuard]},
+      {path: 'memoire-upload/:titre', component: MemoireUploadComponent, canActivate: [AuthGuard]},
+      {path: 'memoire-download/:titre', component: MemoireDownloadComponent, canActivate: [AuthGuard]},
     ]),
     HttpClientModule,
     EditorModule,

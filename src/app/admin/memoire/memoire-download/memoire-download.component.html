@@ -1,0 +1,10 @@
+<div class="container container-fluid">
+  <div class="alert alert-info text-center my-3">
+    <h3>Page de chargement de fichier d'un Memoire</h3>
+  </div>
+  <div class="text-center"><span>Nom de la piece : </span><h4><i>{{piece.name}}</i></h4></div>
+  <div class="my-3">
+    <!--<button (click)="download(piece.name)" type="button"><i class="fa fa-download"></i>&nbsp;<span>{{piece.name}}</span></button>-->
+    <a href="{{piece.url}}"><i class="fa fa-download"></i>&nbsp;<span>{{piece.name}}</span></a>
+  </div>
+</div>

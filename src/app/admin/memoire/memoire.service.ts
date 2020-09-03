@@ -32,11 +32,23 @@ export class MemoireService {
     return this.httpClient.get(this.url + permaLink);
   }
 
+  getMemoireByName(titre: string): Observable<any>{
+    return this.httpClient.get(this.url + 'titre/' + titre);
+  }
+
   getGuestMemoire(permaLink: number): Observable<any>{
     return this.httpClient.get(this.url+ 'guest/' + permaLink);
   }
 
   deleteMemoire(permaLink: number): Observable<any>{
     return this.httpClient.delete(this.url + permaLink );
+  }
+
+  getPiece(titre: string): Observable<any> {
+    return this.httpClient.get(this.url + 'download/' + titre);
+  }
+
+  getFile(titre: string): Observable<any> {
+    return this.httpClient.get(this.url + 'files/' + titre);
   }
 }
