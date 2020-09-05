@@ -6,7 +6,7 @@
       </div><!-- title -->
       <div class="col-md-6">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Rechercher ici ..." >
+          <input type="text" class="form-control" placeholder="Rechercher ici ..." [(ngModel)]="searchedKeyword">
         </div>
       </div>
       <!-- Connexion et deconnexion -->
@@ -28,7 +28,7 @@
       <th>Actions</th>
       </thead>
       <tbody>
-      <tr *ngFor="let item of lists | async | paginate: { itemsPerPage: 7, currentPage: page }">
+      <tr *ngFor="let item of lists | async | paginate: { itemsPerPage: 7, currentPage: page } | filter:searchedKeyword">
         <td>{{item.titre}}</td>
         <td>{{item.titreFiliere}}</td>
         <td>{{item.options}}</td>

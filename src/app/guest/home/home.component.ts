@@ -10,6 +10,7 @@ import {AuthService} from '../../admin/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
   page = 1;
+  searchedKeyword: string;
 
 
   lists: Observable<any[]>;

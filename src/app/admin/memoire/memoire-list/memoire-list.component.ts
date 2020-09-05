@@ -14,6 +14,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 export class MemoireListComponent implements OnInit {
 
   page = 1;
+  searchedKeyword: string;
 
 
   lists: Observable<any[]>;

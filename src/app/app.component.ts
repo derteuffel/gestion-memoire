@@ -8,4 +8,8 @@ import {AuthService} from './admin/auth/auth.service';
 })
 export class AppComponent {
   title = 'memoire-app';
+
+  constructor(private authService: AuthService){
+
+  }
 }

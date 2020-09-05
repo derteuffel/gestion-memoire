@@ -1,3 +1,18 @@
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <h3><span class="title">Rechercher un memoire</span></h3>
+      </div><!-- title -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Rechercher ici ..." [(ngModel)]="searchedKeyword">
+        </div>
+      </div>
+      <!-- Connexion et deconnexion -->
+    </div>
+  </div>
+</div>
 <div class="container container-fluid">
   <div class="alert alert-info text-center my-3">
     <h3>Page de consultation des Memoires</h3>
@@ -16,7 +31,7 @@
         <th>Actions</th>
       </thead>
       <tbody>
-        <tr *ngFor="let item of lists | async | paginate: { itemsPerPage: 7, currentPage: page }">
+        <tr *ngFor="let item of lists | async | paginate: { itemsPerPage: 7, currentPage: page } | filter:searchedKeyword">
           <td>{{item.titre}}</td>
           <td>{{item.titreFiliere}}</td>
           <td>{{item.options}}</td>
